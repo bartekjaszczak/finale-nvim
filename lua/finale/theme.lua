@@ -1,7 +1,7 @@
 local M = {}
 
-function M.get_theme(colours)
-    return {
+function M.get_theme(colours, opts)
+    local theme = {
         none = "NONE",
 
         -- UI elements
@@ -28,7 +28,6 @@ function M.get_theme(colours)
             -- Special colour
             special_accent_weak = colours.pastel.pink,
             special_accent_strong = colours.main.pink,
-
         },
 
         diag = {
@@ -120,6 +119,13 @@ function M.get_theme(colours)
             link = colours.pastel.blue,
         },
     }
+
+    if opts then
+        theme = vim.tbl_deep_extend("force", theme, opts.colour_overrides)
+        theme.styles = opts.styles
+    end
+
+    return theme
 end
 
 return M

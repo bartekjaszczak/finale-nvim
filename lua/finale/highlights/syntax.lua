@@ -2,32 +2,56 @@ local M = {}
 
 function M.get_highlights(theme)
     return {
-        Comment = { fg = theme.syntax.comment, italic = true }, -- (preferred) any constant
-        Constant = { fg = theme.syntax.constant },              -- (preferred) any constant
-        String = { fg = theme.syntax.string },                  --   a string constant: "this is a string"
-        Character = { fg = theme.syntax.char },                 --  a character constant: 'c', '\n'
-        Number = { fg = theme.syntax.number },                  --   a number constant: 234, 0xff
-        Boolean = { fg = theme.syntax.boolean },                --  a boolean constant: TRUE, false
-        Float = { fg = theme.syntax.number },                   --    a floating point constant: 2.3e10
+        Comment = {
+            fg = theme.syntax.comment,
+            bold = theme.styles.comments.bold,
+            italic = theme.styles.comments.italic,
+        },                                           -- (preferred) any constant
+        Constant = { fg = theme.syntax.constant },   -- (preferred) any constant
+        String = { fg = theme.syntax.string },       --   a string constant: "this is a string"
+        Character = { fg = theme.syntax.char },      --  a character constant: 'c', '\n'
+        Number = { fg = theme.syntax.number },       --   a number constant: 234, 0xff
+        Boolean = { fg = theme.syntax.boolean },     --  a boolean constant: TRUE, false
+        Float = { fg = theme.syntax.number },        --    a floating point constant: 2.3e10
 
-        Identifier = { fg = theme.syntax.variable },            -- (preferred) any variable name
-        Function = { fg = theme.syntax.func },                  -- function name (also: methods for classes)
+        Identifier = { fg = theme.syntax.variable }, -- (preferred) any variable name
+        Function = { fg = theme.syntax.func },       -- function name (also: methods for classes)
 
-        Statement = { fg = theme.syntax.statement },            -- (preferred) any statement
-        -- Conditional   = { }, --  if, then, else, endif, switch, etc.
-        -- Repeat        = { }, --   for, do, while, etc.
-        Label = { fg = theme.syntax.label },                  --    case, default, etc.
-        Operator = { fg = theme.syntax.operator },            -- "sizeof", "+", "*", etc.
-        Keyword = { fg = theme.syntax.keyword, bold = true }, --  any other keyword
+        Statement = {
+            fg = theme.syntax.statement,
+            bold = theme.styles.statements.bold,
+            italic = theme.styles.statements.italic,
+        }, -- (preferred) any statement
+        Conditional = {
+            fg = theme.syntax.keyword_flow,
+            bold = theme.styles.keywords.bold,
+            italic = theme.styles.keywords.italic,
+        },                                 --  if, then, else, endif, switch, etc.
+        Repeat = { link = "Conditional" }, --   for, do, while, etc.
+        Label = {
+            fg = theme.syntax.label,
+            bold = theme.styles.statements.bold,
+            italic = theme.styles.statements.italic,
+        }, --    case, default, etc.
+        Operator = {
+            fg = theme.syntax.operator,
+            bold = theme.styles.operators.bold,
+            italic = theme.styles.operators.italic,
+        }, -- "sizeof", "+", "*", etc.
+        Keyword = {
+            fg = theme.syntax.keyword,
+            bold = theme.styles.keywords.bold,
+            italic = theme.styles.keywords.italic,
+        },                                --  any other keyword
         -- Exception     = { }, --  try, catch, throw
-        PreProc = { fg = theme.syntax.keyword },              -- (preferred) generic Preprocessor
+        PreProc = { link = "Statement" }, -- (preferred) generic Preprocessor
         -- Include       = { }, --  preprocessor #include
         -- Define        = {}, --   preprocessor #define
         Macro = { fg = theme.syntax.preproc }, --    same as Define
         -- PreCondit     = { }, --  preprocessor #if, #else, #endif, etc.
 
-        Type = { fg = theme.syntax.type },            -- (preferred) int, long, char, etc.
-        StorageClass = { fg = theme.syntax.keyword }, -- static, register, volatile, etc.
+        Type = { fg = theme.syntax.type },     -- (preferred) int, long, char, etc.
+        StorageClass = { link = "Statement" }, -- static, register, volatile, etc.
         -- Structure     = { }, --  struct, union, enum, etc.
         -- Typedef       = { }, --  A typedef
 
@@ -196,22 +220,23 @@ function M.get_highlights(theme)
         ["@function.method"] = { fg = theme.syntax.method },
         -- ["@function.method.call"] = {},
 
-        ["@constructor"] = { fg = theme.syntax.method },           -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-        ["@operator"] = { fg = theme.syntax.operator },            -- For any operator: `+`, but also `->` and `*` in C.
+        ["@constructor"] = { fg = theme.syntax.method }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+        ["@operator"] = { link = "Operator" },           -- For any operator: `+`, but also `->` and `*` in C.
 
-        ["@keyword"] = { fg = theme.syntax.keyword, bold = true }, -- For keywords that don't fall in previous categories.
+        ["@keyword"] = { link = "Keyword" },             -- For keywords that don't fall in previous categories.
         -- ["@keyword.coroutine"] = {},
         -- ["@keyword.function"] = {},
         -- ["@keyword.operator"] = {},
         -- ["@keyword.import"] = {},
         -- ["@keyword.type"] = {},
         -- ["@keyword.modifier"] = {},
-        ["@keyword.repeat"] = { fg = theme.syntax.keyword_flow, bold = true },
-        ["@keyword.return"] = { fg = theme.syntax.keyword_flow, bold = true },
+        ["@keyword.repeat"] = { link = "Conditional" },
+        ["@keyword.return"] = { link = "Conditional" },
         -- ["@keyword.debug"] = {},
         -- ["@keyword.exception"] = {},
 
-        ["@keyword.conditional"] = { fg = theme.syntax.keyword_flow, bold = true },
+        ["@keyword.conditional"] = { link = "Conditional" },
+
         -- ["@keyword.conditional.ternary"] = {},
 
         -- ["@keyword.directive"] = {},
