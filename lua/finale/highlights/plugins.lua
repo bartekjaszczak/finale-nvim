@@ -46,6 +46,9 @@ function M.get_highlights(theme)
         BlinkCmpSignatureHelpBorder = { link = "FloatBorder" },
         BlinkCmpSignatureHelpActiveParameter = { bg = theme.diag.warn.fg, fg = theme.ui.bg_neutral, bold = true },
 
+        -- Codeium
+        CodeiumSuggestion = { fg = theme.suggestions },
+
         -- Copilot
         CopilotAnnotation = { fg = theme.suggestions },
         CopilotSuggestion = { fg = theme.suggestions },
