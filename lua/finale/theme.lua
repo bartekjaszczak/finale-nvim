@@ -49,6 +49,7 @@ function M.get_theme(colours, opts)
             },
             ok = {
                 fg = colours.pastel.green,
+                bg = colours.base.bg_0,
             },
         },
 

@@ -138,6 +138,13 @@ function M.get_highlights(theme)
         DiagnosticVirtualTextWarn = { fg = theme.diag.warn.fg, bg = theme.diag.warn.bg },
         DiagnosticVirtualTextInfo = { fg = theme.diag.info.fg, bg = theme.diag.info.bg },
         DiagnosticVirtualTextHint = { fg = theme.diag.hint.fg, bg = theme.diag.hint.bg },
+        DiagnosticVirtualTextOk = { fg = theme.diag.ok.fg, bg = theme.diag.ok.bg },
+
+        DiagnosticVirtualLinesError = { fg = theme.diag.error.fg, bg = theme.diag.error.bg },
+        DiagnosticVirtualLinesWarn = { fg = theme.diag.warn.fg, bg = theme.diag.warn.bg },
+        DiagnosticVirtualLinesInfo = { fg = theme.diag.info.fg, bg = theme.diag.info.bg },
+        DiagnosticVirtualLinesHint = { fg = theme.diag.hint.fg, bg = theme.diag.hint.bg },
+        DiagnosticVirtualLinesOk = { fg = theme.diag.ok.fg, bg = theme.diag.ok.bg },
 
         DiagnosticUnderlineError = {
             undercurl = true,
