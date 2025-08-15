@@ -18,8 +18,8 @@ function M.get_theme(colours, opts)
             highlight = colours.base.highlight,
 
             -- Main accent
-            accent_weak = colours.pastel.yellow,
-            accent_strong = colours.main.yellow,
+            accent_weak = colours.pastel.gold,
+            accent_strong = colours.main.gold,
 
             -- Complementary accent
             secondary_accent_weak = colours.pastel.blue,
@@ -66,23 +66,23 @@ function M.get_theme(colours, opts)
             comment = colours.base.dark_grey,
             comment_special = colours.base.light_grey,
 
-            string = colours.pastel.yellow,
-            char = colours.main.lime,
+            string = colours.pastel.violet,
+            char = colours.main.violet,
             stringspecial = colours.main.pink,
 
-            constant = colours.pastel.green,
-            enummember = colours.pastel.lime,
+            constant = colours.pastel.teal,
+            enummember = colours.main.teal,
 
             number = colours.pastel.pink,
             boolean = colours.pastel.pink,
 
             variable = colours.base.fg_1,
-            param = colours.pastel.orange,
-            field = colours.pastel.blue,
+            param = colours.base.fg_1,
+            field = colours.pastel.lime,
             global = colours.pastel.red,
-            static = colours.pastel.violet,
+            static = colours.pastel.blue,
 
-            func = colours.main.blue,
+            func = colours.main.gold,
             method = colours.main.orange,
 
             statement = colours.main.red,
@@ -92,8 +92,8 @@ function M.get_theme(colours, opts)
 
             preproc = colours.main.green,
 
-            type = colours.main.yellow,
-            type_builtin = colours.main.yellow,
+            type = colours.main.blue,
+            type_builtin = colours.main.blue,
 
             special = colours.main.pink,
 
@@ -107,11 +107,11 @@ function M.get_theme(colours, opts)
             label = colours.main.teal,
             namespace = colours.base.fg_0,
             module = colours.base.fg_0,
-            builtin = colours.pastel.purple,
+            builtin = colours.main.red,
             tag = colours.main.red,
             attribute = colours.main.lime,
 
-            h1 = colours.main.yellow,
+            h1 = colours.main.gold,
             h2 = colours.main.purple,
             h3 = colours.main.orange,
             h4 = colours.main.green,

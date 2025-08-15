@@ -167,3 +167,7 @@ Because it's my 4th Neovim theme this year and I hope it'll be the last one. For
 ### I'd like to adjust some colours to my liking, how can I do that?
 
 Currently there's no settings available. If you feel like you could use colour overrides (or some other custom configuration), feel free to open an issue.
+
+### The theme has recently undergone some big changes, how do I bring back the original?
+
+Instead of main, pin the "0.1" tag.
